@@ -1,0 +1,28 @@
+<p>
+  <b>Topic:</b>
+  <%=h @curriculum_content.topic.title if @curriculum_content.topic %>
+</p>
+
+<p>
+  <b>Research stage:</b>
+  <%=h @curriculum_content.research_stage %>
+</p>
+
+<p>
+  <b>Content item:</b>
+  <%=h @curriculum_content.content_item %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%=h @curriculum_content.language %>
+</p>
+
+<p>
+  <b>Grade range:</b>
+  <%=h @curriculum_content.grade_range %>
+</p>
+
+
+<%= link_to 'Edit', edit_curriculum_content_path(@curriculum_content.id) %> |
+<%= link_to 'Back', curriculum_contents_path %>

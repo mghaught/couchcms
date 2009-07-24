@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  research_stage: MyString
+  content_item: MyString
+  language: MyString
+  grade_range: MyString
+
+two:
+  research_stage: MyString
+  content_item: MyString
+  language: MyString
+  grade_range: MyString

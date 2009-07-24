@@ -1,0 +1,28 @@
+<h1>Listing curriculum_contents</h1>
+
+<table>
+  <tr>
+    <th>Topic</th>
+    <th>Research stage</th>
+    <th>Content item</th>
+    <th>Language</th>
+    <th>Grade range</th>
+  </tr>
+
+<% @curriculum_contents.each do |curriculum_content| %>
+  <tr>
+    <td><%=h curriculum_content.topic.title if curriculum_content.topic %></td>
+    <td><%=h curriculum_content.research_stage %></td>
+    <td><%=h curriculum_content.content_item %></td>
+    <td><%=h curriculum_content.language %></td>
+    <td><%=h curriculum_content.grade_range %></td>
+    <td><%= link_to 'Show', curriculum_content_path(curriculum_content.id) %></td>
+    <td><%= link_to 'Edit', edit_curriculum_content_path(curriculum_content.id) %></td>
+    <td><%= link_to 'Destroy', curriculum_content_path(curriculum_content.id), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New curriculum_content', new_curriculum_content_path %>

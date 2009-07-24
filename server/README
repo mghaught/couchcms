@@ -1,0 +1,3 @@
+== CouchCMS
+
+This is a simple prototype built on the Ruby on Rails framework for a science-based wiki using CouchDB via CouchRest as the persistence layer.

@@ -1,0 +1,33 @@
+<h1>Editing curriculum_content</h1>
+
+<% form_for(@curriculum_content, :url => curriculum_content_path(@curriculum_content.id), :html => {:method => :put}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :topic_id %><br />
+    <%= f.select :topic_id, Topic.all.map{|t| [t.title, t.id]} %>
+  </p>
+  
+  <p>
+    <%= f.label :research_stage %><br />
+    <%= f.text_field :research_stage %>
+  </p>
+  <p>
+    <%= f.label :content_item %><br />
+    <%= f.text_field :content_item %>
+  </p>
+  <p>
+    <%= f.label :language %><br />
+    <%= f.text_field :language %>
+  </p>
+  <p>
+    <%= f.label :grade_range %><br />
+    <%= f.text_field :grade_range %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', curriculum_content_path(@curriculum_content.id) %> |
+<%= link_to 'Back', curriculum_contents_path %>

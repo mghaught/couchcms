@@ -1,0 +1,18 @@
+test examples
+document upload
+
+
+INSTALL
+install/upgrade json gem to 1.1.7 (native)
+
+
+
+Flexe access:
+http://demo.flexe.globe.gov
+manager - ...
+students-1 - 0ze8
+
+
+Curl test commands
+
+curl http://localhost:3000/contents.xml
