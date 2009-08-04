@@ -4,13 +4,13 @@
   <%= f.error_messages %>
   
   <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </p>
-  <p>
-    <%= f.label :page %><br />
-    <%= f.text_field :page %>
-  </p>
+  <!-- <p>
+    <%#= f.label :language %><br />
+    <%#= f.select :language, %w{de en es fr it ja zh}, :prompt => "Choose language code" %>
+  </p> -->
   <p>
     <%= f.submit 'Create' %>
   </p>

@@ -1,6 +1,6 @@
 <h1>Editing content</h1>
 
-<% form_for(@content, :url => contents_path(@content.id), :html => {:method => :put}) do |f| %>
+<% form_for(@content, :url => content_path(@content.id), :html => {:method => :put}) do |f| %>
   <%= f.error_messages %>
 
   <p>

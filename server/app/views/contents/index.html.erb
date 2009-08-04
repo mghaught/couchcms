@@ -2,13 +2,20 @@
 
 <table>
   <tr>
-    <th>Title</th>
+    <th>Name</th>
+    <th>Category</th>
+    <th>Approved By</th>
     <th>Created At</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @contents.each do |content| %>
   <tr>
-    <td><%=h content.title %></td>
+    <td><%=h content.name %></td>
+    <td><%=h content.category_id %></td>
+    <td><%=h content.approved_by_id %></td>
     <td><%= content.created_at %></td>
     <td><%= link_to 'Show', content_path(content.id) %></td>
     <td><%= link_to 'Edit', edit_content_path(content.id) %></td>

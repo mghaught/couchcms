@@ -1,12 +1,22 @@
 <p>
   <b>Title:</b>
-  <%=h @content.title %>
+  <%=h @content.name %>
 </p>
 
 <p>
-  <b>Page:</b>
-  <%=h @content.page %>
+  <b>Category:</b>
+  <%=h @content.category_id %>
 </p>
+
+<p>
+  <b>Approved By:</b>
+  <%=h @content.approved_by_id %>
+</p>
+
+<p>
+  <b>Languages:</b>
+  <%= @content.languages.join(', ')%>
+</p>  
 
 <%= link_to 'Edit', edit_content_path(@content) %> |
 <%= link_to 'Back', contents_path %>

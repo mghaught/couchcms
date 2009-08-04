@@ -2,7 +2,7 @@ class ContentsController < ApplicationController
   # GET /contents
   # GET /contents.xml
   def index
-    @contents = Content.by_title
+    @contents = Content.by_name
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,12 +1,26 @@
 class Content < CouchRestRails::Document
   
-  property  :title
-  property  :page
+  property  :name
+  property  :category_id
+  property  :approved_by_id
+  property  :data
   
   timestamps!
   
-  view_by :title
+  view_by :name
   view_by :created_at
+  view_by :language,
+    :map =>
+      "function(doc) {
+        if (doc['couchrest-type'] == 'Content' && doc['data']) {
+          for(var i in doc.data) { 
+            emit(i, doc.data[i]); 
+          }
+        }
+      }"
+  # to get all contents with en language versions    
+  # Content.by_language :key => "en" 
+  
   
   def to_param
     id
@@ -19,14 +33,23 @@ class Content < CouchRestRails::Document
     
     xml.instruct! unless options[:skip_instruct]
     xml.content do
-      xml.id            id
-      xml.rev           rev
-      xml.title         title
-      xml.page          page
-      xml.created_at    created_at.to_s(:db)
-      xml.updated_at    updated_at.to_s(:db)
+      xml.id                id
+      xml.rev               rev
+      xml.name              name
+      xml.category_id       category_id
+      xml.approved_by_id    approved_by_id
+      xml.data              data.to_xml
+      xml.created_at        created_at.to_s(:db)
+      xml.updated_at        updated_at.to_s(:db)
     end
   end
+  
+  
+  def languages
+    data && data.is_a?(Hash) ? data.keys : ["None"]
+  end
+  
+  
   
 end
 
