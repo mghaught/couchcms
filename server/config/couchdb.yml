@@ -1,12 +1,14 @@
-environment_database: &environment_database
-  database: <%= RAILS_ROOT.sub(/\A.*\/([^\/]+)\/?\z/, '\1') %>_<%= RAILS_ENV %>
+base: &base
+ database_prefix: 
 
 development:
   host: localhost
+  database_suffix: _development
   port: 5984
-  <<: *environment_database
+  <<: *base
   
 test:
   host: localhost
   port: 5984
-  <<: *environment_database
+  database_suffix: _test
+  <<: *base

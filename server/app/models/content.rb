@@ -1,5 +1,7 @@
 class Content < CouchRestRails::Document
   
+  use_database :globe
+  
   property  :name
   property  :category_id
   property  :approved_by_id
